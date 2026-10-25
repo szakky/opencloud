@@ -14,7 +14,7 @@ services:
     environment:
       OC_URL: "https://192.168.1.5:9200"
       OC_INSECURE: "true"
-      IDM_ADMIN_PASSWORD: "ChangeMe12345!"
+      IDM_ADMIN_PASSWORD: "${IDM_ADMIN_PASSWORD}"
     volumes:
       - ./opencloud-data:/var/lib/opencloud
       - ./opencloud-config:/etc/opencloud

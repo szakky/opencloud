@@ -6,3 +6,4 @@ opencloud-data/
 # 環境変数ファイルやログ
 .env
 *.log
+.env
