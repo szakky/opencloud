@@ -1,0 +1,22 @@
+services:
+  opencloud:
+    image: opencloudeu/opencloud:latest
+    container_name: opencloud
+    restart: always
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        if [ ! -f /var/lib/opencloud/config/opencloud.yaml ]; then
+          opencloud init
+        fi
+        exec opencloud server
+    environment:
+      OC_URL: "https://192.168.1.5:9200"
+      OC_INSECURE: "true"
+      IDM_ADMIN_PASSWORD: "ChangeMe12345!"
+    volumes:
+      - ./opencloud-data:/var/lib/opencloud
+      - ./opencloud-config:/etc/opencloud
+    ports:
+      - "9200:9200"

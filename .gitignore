@@ -1,0 +1,8 @@
+# データ・設定ディレクトリの除外
+ocis-data/
+opencloud-config/
+opencloud-data/
+
+# 環境変数ファイルやログ
+.env
+*.log
